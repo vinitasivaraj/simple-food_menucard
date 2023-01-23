@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'food/base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block  content%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img height="300" src="{{item_id.item_image}}" class="card">
+        </div>
+        <div class="col-md-6">
+                <h3>{{item_id.item_name}}</h3>
+                <h3>{{item_id.item_desc}}</h3>
+               <h3>Rs:{{item_id.item_price}}</h3>
+                <a href="{% url 'food:delete_item' item_id.id %}" class="btn btn-success">Delete</a>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+</body>
+</html>

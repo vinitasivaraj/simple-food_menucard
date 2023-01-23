@@ -1,0 +1,36 @@
+{% extends 'food/base.html' %}
+{% load static %}
+
+
+
+<html lang="en">
+
+<body>
+{% block  content%}
+
+
+<!--#old code-->
+{% for con in item_list %}
+
+<div class="row">
+    <div class="col-md-3 offset-md-2" >
+        <img src="{{con.item_image}}" class="card" height="100px"  >
+    </div>
+    <div class="col-md-4">
+        <h3>{{con.item_name}}</a></h3>
+        <h5>{{con.item_desc}}</h5>
+        <h6>Rs:{{con.item_price}}</h6>
+    </div>
+    <div class="col-md-2">
+            <a href="{{con.get_absolute_url}}" class="btn btn-success">Details</a>
+            <a href="{{con.get_absolute_url1}}" class="btn btn-success">Edit</a>
+    </div>
+</div>
+
+
+
+{% endfor %}
+
+{% endblock %}
+</body>
+</html>
